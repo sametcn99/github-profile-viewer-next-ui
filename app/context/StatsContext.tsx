@@ -5,6 +5,7 @@ import {
   calculateLanguageDistribution,
   calculateLicenseDistribution,
   calculateTopTopics,
+  calculateTotalArchived,
   calculateTotalForks,
   calculateTotalRepos,
   calculateTotalStars,
@@ -26,6 +27,7 @@ type StatsContextProps = {
   totalGists: number;
   totalForks: number;
   totalTopics: number;
+  totalArchived: number;
   averageStarsPerRepo: number;
   starsPerRepo: Record<string, number>;
   languages: Record<string, number>;
@@ -53,6 +55,7 @@ export const StatsProvider: React.FC<{ children: React.ReactNode }> = ({
   const totalGists = calculateTotalRepos(gists);
   const totalStars = calculateTotalStars(repos);
   const totalForks = calculateTotalForks(repos);
+  const totalArchived = calculateTotalArchived(repos);
   const languages = calculateLanguageDistribution(repos);
   const licenses = calculateLicenseDistribution(repos);
   const topTopics = calculateTopTopics(repos);
@@ -84,6 +87,7 @@ export const StatsProvider: React.FC<{ children: React.ReactNode }> = ({
     latestUpdatedRepo,
     oldestRepo,
     updatePeriod,
+    totalArchived,
   };
 
   // Provide the context value to the child components

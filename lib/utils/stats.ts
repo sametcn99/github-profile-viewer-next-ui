@@ -58,6 +58,16 @@ export const calculateTotalForks = (repos: GitHubRepo[]): number => {
 };
 
 /**
+ * Calculates the total number of archived repositories.
+ *
+ * @param {GitHubRepo[]} repos - Array of GitHub repositories.
+ * @returns {number} - Total number of archived repositories.
+ */
+export const calculateTotalArchived = (repos: GitHubRepo[]): number => {
+  return repos.filter((repo) => repo.archived).length;
+}
+
+/**
  * Calculates the distribution of programming languages across all repositories.
  *
  * @param {GitHubRepo[]} repos - Array of GitHub repositories.

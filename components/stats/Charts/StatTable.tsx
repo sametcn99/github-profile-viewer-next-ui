@@ -15,6 +15,7 @@ export default function StatTable({}: {}) {
     totalGists,
     averageStarsPerRepo,
     totalTopics,
+    totalArchived,
   } = statsContext ?? {};
   const { user } = userContext;
   return (
@@ -70,6 +71,14 @@ export default function StatTable({}: {}) {
       >
         <Heading size="4">Total Topics</Heading>
         <Text>{totalTopics ?? 0}</Text>
+      </Grid>
+      <Grid
+        columns="2"
+        width="auto"
+        className="rounded-xl p-2 hover:bg-black/30"
+      >
+        <Heading size="4">Total Archived Repositories</Heading>
+        <Text>{totalArchived}</Text>
       </Grid>
       <Grid
         columns="2"

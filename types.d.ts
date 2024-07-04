@@ -15,6 +15,7 @@ type GitHubRepo = {
   created_at: string;
   updated_at: string;
   pushed_at: string;
+  archived: boolean;
   topics: string[];
   license_name: string;
   license_url: string;
