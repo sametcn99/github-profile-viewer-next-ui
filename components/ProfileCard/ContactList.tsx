@@ -77,11 +77,7 @@ export default function ContactList({
           allDataFetched = true; // Stop the loop in case of an error
         }
       }
-
-      // Set loading to false when data fetching is complete
-      if (isMounted) {
-        setLoading(false);
-      }
+      setLoading(false); // Set loading to false when data fetching is complete
     };
 
     // Fetch data only when the dialog is open
