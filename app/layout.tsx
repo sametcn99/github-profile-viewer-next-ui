@@ -1,19 +1,18 @@
-import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import React from "react";
-import { Analytics } from "@vercel/analytics/react";
-import "@radix-ui/themes/styles.css";
-import { Theme } from "@radix-ui/themes";
-import Navbar from "../components/Navbar";
-import { getSiteUrl } from "@/lib/utils";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { GoogleAnalytics } from "@next/third-parties/google";
 import Footer from "@/components/home/Footer";
-import Script from "next/script";
+import { getSiteUrl } from "@/lib/utils";
 import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
-import Head from "next/head";
+import { GoogleAnalytics } from "@next/third-parties/google";
+import { Theme } from "@radix-ui/themes";
+import "@radix-ui/themes/styles.css";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import type { Metadata, Viewport } from "next";
+import { Inter } from "next/font/google";
+import Script from "next/script";
+import React from "react";
+import Navbar from "../components/Navbar";
+import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 /**
@@ -89,16 +88,14 @@ export default function RootLayout({
       }}
     >
       <html lang="en">
-        <body
-          className={`${inter.className} flex min-h-screen w-full justify-center px-1 transition-all duration-1000 md:px-4`}
-        >
+        <body className={inter.className}>
           <Theme
             appearance="dark"
             accentColor="gray"
             grayColor="slate"
             radius="large"
           >
-            <main className=" flex w-full flex-col items-center gap-4 p-2 pt-4 transition-all duration-1000 sm:w-[30rem] md:w-[40rem] lg:w-[60rem] xl:w-[70rem] 2xl:w-[80rem]">
+            <main className="container mx-auto flex flex-col gap-4">
               <Navbar />
               {children}
               <Footer />

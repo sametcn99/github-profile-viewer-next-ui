@@ -106,14 +106,14 @@ export default function SearchBar({ className }: { className?: string }) {
 
         <Box className="static flex flex-col items-center justify-center gap-5 ">
           <Box className="flex w-full flex-row items-center justify-between gap-3">
-            <TextField.Input
+            <TextField.Root
               size="3"
               className="w-full"
               aria-label="Search"
               placeholder="Write user name"
               onKeyDown={handleKeyPress}
               onChange={handleChange}
-            ></TextField.Input>
+            ></TextField.Root>
             <DropdownMenu.Root>
               <DropdownMenu.Trigger>
                 <Button className="hover:cursor-pointer">Filter By</Button>

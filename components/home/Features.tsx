@@ -33,14 +33,14 @@ export default function Features() {
       <Heading size="8" className="text-3xl font-bold">
         Features
       </Heading>
-      <Box className="grid gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
         {featureTexts.map((feature, index) => (
           <Card className="p-4" key={index}>
             <Heading>{feature.header}</Heading>
             <Text>{feature.span}</Text>
           </Card>
         ))}
-      </Box>
+      </div>
     </Section>
   );
 }

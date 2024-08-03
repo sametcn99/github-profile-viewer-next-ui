@@ -1,13 +1,13 @@
 "use client";
-import { useContext, useMemo } from "react";
 import { GithubContext } from "@/app/context/GithubContext";
-import { Box } from "@radix-ui/themes";
-import FilterBar from "./FilterBar";
-import ReposCard from "./ReposCard";
-import { VList } from "virtua";
 import Loading from "@/app/loading";
 import { useRepositoryFilters } from "@/hooks/useRepositoryFilters";
 import { extractUniqueValues } from "@/lib/utils";
+import { Box } from "@radix-ui/themes";
+import { useContext, useMemo } from "react";
+import { VList } from "virtua";
+import FilterBar from "./FilterBar";
+import ReposCard from "./ReposCard";
 
 export default function Repositories() {
   const { repos, loading } = useContext(GithubContext);

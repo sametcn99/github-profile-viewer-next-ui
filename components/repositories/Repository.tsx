@@ -1,21 +1,19 @@
-import { BsFillStarFill } from "react-icons/bs";
-import { FaCodeFork } from "react-icons/fa6";
 import { formatNumber } from "@/lib/utils";
 import {
   Box,
-  Button,
   Card,
-  DropdownMenu,
   Heading,
   Link,
   Text,
-  Tooltip,
+  Tooltip
 } from "@radix-ui/themes";
+import { BsFillStarFill } from "react-icons/bs";
+import { FaCodeFork } from "react-icons/fa6";
+import { GoLaw } from "react-icons/go";
+import { TfiWorld } from "react-icons/tfi";
 import Readme from "../Readme";
 import { languageIcons } from "../icons/LanguageIcons";
-import { GoLaw } from "react-icons/go";
 import StarHistory from "../stats/Charts/StarHistory";
-import { TfiWorld } from "react-icons/tfi";
 
 export default function Repository({ repo }: { repo: GitHubRepo }) {
   return (

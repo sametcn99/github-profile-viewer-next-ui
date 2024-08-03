@@ -24,7 +24,7 @@ export default function PostCard({ post }: Props, index: number) {
     <>
       {/* Create a link to the post's detail page using 'Link' */}
       <Link href={"/blog/" + id}>
-        <div className="h-fit w-full hover:bg-black/30">
+        <div className="h-fit w-full py-4 hover:pl-2">
           <span className="text-xl font-semibold"> {title}</span>
           <br />
           {/* Display the formatted date */}
