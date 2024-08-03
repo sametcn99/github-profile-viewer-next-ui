@@ -1,6 +1,6 @@
+import { auth } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
 import createOctokitInstance from "../../../lib/createOctokitInstance";
-import { auth } from "@clerk/nextjs/server";
 
 /**
  * Fetches stargazers for a GitHub repo from the GitHub API.
@@ -11,7 +11,8 @@ import { auth } from "@clerk/nextjs/server";
  * @returns A promise resolving to the array of stargazer records for the requested page
  */
 async function fetchStargazers(username: string, repo: string, page: number) {
-  const octokit = await createOctokitInstance();
+  const { userId } = auth();
+  const octokit = await createOctokitInstance(userId ? userId : undefined);
   const responseData = await octokit.rest.activity.listStargazersForRepo({
     owner: username,
     repo: repo,
